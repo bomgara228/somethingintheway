@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Обьявление массива:*/
+        let arr1 = [1, 2, 3, 4, 5]; /*Можно наполнить разными типами данных*/
+        const arr2 = new Array(5);
+        
+        arr1[0] = 17;
+        console.log(arr1);
+
+        /*Длина массива:*/
+        console.log(arr1.length);
+        arr1.length = 2;
+        console.log(arr1);
+
+        arr1[100] = 'fafa'
+        console.log(arr1.length);
+        console.log(arr1);
+
+        let arr3 = [];
+        /*for (let i = 0; i <= 2; i++) {
+            arr3[i] = +prompt('Введите любое число:');
+        }
+        console.log(arr3);*/
+
+        /*Методы наполнения массива:*/
+        arr3.length = 0;
+        //push() - дописывает значения в конец массива
+        //pop()  - удаляет последний значимый элемент
+        for (let i = 1; i <= 3; i++) {
+            arr3.push(+prompt('Введите любое число:'));
+        }
+        arr3.pop();
+        console.log(arr3);
+
+        /*shift() и unshift() - удаляет и добавляет элементы с начала массива:*/
+
+        let arr4 = [1,2,3,4,5];
+        /*1-й способ перебора элементов в массиве:*/
+        let result = 1;
+        for (let i = 1; i < arr4.length; i++) {
+            result*= arr4[i];
+        }
+        console.log(result);
+        result = 1;
+        for ( let i of arr4) {
+            result *=i;
+        }
+        console.log(result);
+
+        let arr5 = [[1,2,3], [1,2,3], [1,2,3]];
+        console.log(arr5[0][2]);
+
+        let arr6 = arr5; // типо не копия
+
+        /*Основные методы массива:*/
+        let arr7 = [1, 2, 3, 4, 5];
+        /*arr.splice() - универсальный метод для модификации массива:*/
+        /*Удаление:*/
+        arr7.splice(3,1);//на месте изменяет длинну массива:
+        console.log(arr7);
+
+        arr7.splice(0, 1, 100, 101);//Замена
+        console.log(arr7);
+
+        arr7.splice(2, 0, 102, 103);//Дополнение
+        console.log(arr7);
+
+        /*slice() - вырезает часть массива:*/
+        let arr8 = [1, 2, 3, 4, 5];
+        let arr9 = arr8.slice(0);//Легальное создание копии
+        arr8[0] = 100;
+        console.log(arr8);
+        console.log(arr9);
+
+        /*indexOf() - поиск элемента в массиве:*/
+        let arr10 = [1, 2, 3];
+        console.log(arr10.indexOf(3));
+        /*reverse() -  переворачивает массив:*/
+        let arr11 = [1, 2, 3, 4, 5];
+        arr11.reverse();
+        console.log(arr11);
+
+        /*split() - строка в массив!*/
+        let useStr = '123456';
+        let arr12 = useStr.split('');
+        console.log(arr12);
+
+        /*join() - объединение массива назад в строку:*/
+        let arr13 = [1, 2, 3];
+        let userStr2 = arr13.join('');
+        console.log(userStr2);
+        console.log(typeof userStr2);
+    </script>
+</body>
+</html>
